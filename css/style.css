@@ -385,3 +385,43 @@ select
  height:40px;
  margin-left:5px;
 }
+.steps
+{
+ display:flex;
+ justify-content:center;
+}
+.steps > div
+{
+ display:flex;
+ justify-content:center;
+ padding:7px;
+ font-family:MonsRegular;
+ font-size:10px;
+ line-height:18px;
+}
+.steper
+{
+ display:flex; 
+ flex-direction:column; 
+ margin-left:10px; 
+ margin-top:10px;
+}
+.form_row
+{
+ display:flex;
+ justify-content:space-around;
+ background:#f9fbff;
+ padding:35px;
+}
+.form_inputs
+{
+ border-radius:3px;
+ border:1px solid rgb(78, 76, 103);
+ font-size:14px;
+ font-family:MonsLight;
+ color:#4e4c67;
+ height:58px;
+ padding:5px;
+ width:100%;
+ margin-bottom:10px;
+}
