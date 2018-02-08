@@ -73,7 +73,8 @@ function resetLang(jsonData)
  $("#risk_warn").text(jsonData.risk_warn)
  $("#risk_text").text(jsonData.risk_text)
  $("#non_exl").text(jsonData.non_exl)
- $("#terms").text(jsonData.language)
+ $("#language").text(jsonData.language)
+ $("#terms").text(jsonData.terms)
 
 }
 function changeLang(language)
