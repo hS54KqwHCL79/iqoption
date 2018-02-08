@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -274,6 +274,31 @@
 
 </div>
 
+<div class = "footer">
+ <div>
+  <span class = "risk_title">risk warning</span>
+  <p class = "risk_text">Cryptocurrencies are highly volatile, risky and complex products. Due to wide price fluctuations, trading them may result in significant loss over a short period of time. Leverage can work both to your advantage and disadvantage. As a result, trading cryptocurrencies may not be suitable for all investors, and you should never invest money that you cannot afford to lose.</p>
+ </div>
+</div>
+
+<div class = "after_risk">
+ <p style = "width:70%;">
+ You are granted limited non-exclusive non-transferable rights to use the IP provided on this website for personal and non-commercial purposes in relation to the services offered on the Website only.
+ </p>
+</div>
+
+<div class = "underground">
+ <div>
+  <span>Language</span>
+ </div>
+ <div>
+  <span style= "color:#ff5722;">Terms & Conditions</span>
+ </div>
+ <div>
+  IQ Option, © 2013 - 2018
+ </div>
+</div>
+
 
 <script src = "js/jquery.min.js"></script>
 <script>
@@ -284,6 +309,7 @@ function isNumberKey(evt){
     return true;
 }
 var Status = 1
+var lang = 'eng'
 function next()
 {
  if(Status == 2)
@@ -319,8 +345,34 @@ function prev()
   Status--
  }
 }
+
+function resetData(language)
+{
+ $.ajax({
+        type:     "GET",
+		cache:    false,
+		url:      "data/data.json",
+		dataType: "json",
+		error: function (request, error) {
+			console.log(arguments);
+			alert(" Can't do because: " + error);
+		},
+		success: function (data) {
+			var stringy = JSON.stringify(data)
+			var json    = JSON.parse(stringy)
+			DATA_FOR_PAGE = json[language]
+			$(".cryp_text").text(DATA_FOR_PAGE.buy)
+		}
+	   }); 
+}
  $(document).ready(function()
  {
+  var DATA_FOR_PAGE = {}
+  resetData('russ') 
+  $('.cryp_text').click(function()
+  {
+   resetData('eng')
+  })
   $(".acor_text").hide()
   $(".acor_clicker").click(function()
   {
