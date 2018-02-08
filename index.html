@@ -3,6 +3,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
@@ -290,6 +291,10 @@
 <div class = "underground">
  <div>
   <span>Language</span>
+  <select id = "language">
+   <option value = "eng">English</option>
+   <option value = "russ">Russian</option>
+  </select>
  </div>
  <div>
   <span style= "color:#ff5722;">Terms & Conditions</span>
@@ -369,6 +374,12 @@ function resetData(language)
  {
   var DATA_FOR_PAGE = {}
   resetData('russ') 
+  $("#language").change(function()
+  {
+   var selectLang = $(this).children(":selected").attr("value")
+   console.log($(this).children(":selected").attr("value"))
+   resetData(selectLang)
+  })
   $('.cryp_text').click(function()
   {
    resetData('eng')
