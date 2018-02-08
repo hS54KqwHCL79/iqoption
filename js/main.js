@@ -1,11 +1,31 @@
 ﻿var Status = 1
 var lang = 'eng'
+var CURRENCY_DATA = {}
 
-function isNumberKey(evt){
+function isNumber(evt){
     var charCode = (evt.which) ? evt.which : event.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57))
         return false;
-    return true;
+    else
+	{
+	   var currency = $("#currency_money").children(":selected").attr("value")
+	   var money = $("#moneyCash").val()
+	   perevod(money, currency, 'bitcoin') 
+	   return true
+	}
+}
+
+function isNumber2(evt){
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if (charCode > 31 && (charCode < 48 || charCode > 57))
+        return false;
+    else
+	{
+	   var currency = $("#currency_money").children(":selected").attr("value")
+	   var money = $("#moneyCash").val()
+	   revod(money, currency, 'bitcoin') 
+	   return true
+	}
 }
 
 function next()
@@ -75,8 +95,8 @@ function resetLang(jsonData)
  $("#non_exl").text(jsonData.non_exl)
  $("#language").text(jsonData.language)
  $("#terms").text(jsonData.terms)
-
 }
+
 function changeLang(language)
 {
  $.ajax({
@@ -89,20 +109,59 @@ function changeLang(language)
 			alert(" Can't do because: " + error);
 		},
 		success: function (data) {
-			var stringy = JSON.stringify(data)
-			var json    = JSON.parse(stringy)
-			console.log("succes")
-			resetLang(json[language])
+			var stringy   = JSON.stringify(data)
+			 = JSON.parse(stringy)
+			console.log("succes"+CURRENCY_DATA)
 		}
 	   }); 
 }
+
+function perevod(money, currency, crypt)
+{
+ var result = money*0.9/CURRENCY_DATA[crypt][currency]
+ console.log("money = "+money+" currency = "+currency+" crypt = "+crypt+" result = "+result)
+ $("#result").attr("value", result)
+}
+
+function revod(result, currency, crypt)
+{
+ var money = result*CURRENCY_DATA[crypt][currency]/0.9
+ console.log(money)
+ $("#moneyCash").attr("value", money)
+}
+
  $(document).ready(function()
  {
+
+  $.ajax({
+        type:     "GET",
+		cache:    false,
+		url:      "data/currency.json",
+		dataType: "json",
+		error: function (request, error) {
+			console.log(arguments);
+			alert(" Can't do because: " + error);
+		},
+		success: function (data) {
+			var stringy = JSON.stringify(data)
+			var json    = JSON.parse(stringy)
+			CURRENCY_DATA = json
+			perevod(1000,'usd','bitcoin')
+		}
+	   }); 
+
   $("#languageSelect").change(function()
   {
    var selectLang = $(this).children(":selected").attr("value")
    console.log($(this).children(":selected").attr("value"))
    changeLang(selectLang)
+  })
+  
+  $("#currency_money").change(function()
+  {
+   var currency = $(this).children(":selected").attr("value")
+   var money = $("#moneyCash").attr("value")
+   perevod(money, currency, 'bitcoin')
   })
 
   $(".acor_text").hide()
