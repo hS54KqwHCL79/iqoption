@@ -10,13 +10,59 @@
   "people_buy":"people have already bought Cryptocurrencies with IQ Option",
   "people_invest":"already invested into Cryptocurrencies with IQ Option",
   "help":"Help",
-  "what_is":"What is a Cryptocurrency?"
-
- },
+  "what_is":"What is a Cryptocurrency?",
+  "what_is_text":"A cryptocurrency is a digital currency designed and controlled by a special encryption technology. It serves as a digital storage of value and a medium of exchange. Cryptocurrencies are getting more popular with each day. The demand for them is ever-increasing and so is the price.",
+  "is_safe":"Is it safe and legal to buy cryptocurrencies?",
+  "is_safe_text":"A cryptocurrency is a digital currency designed and controlled by a special encryption technology. It serves as a digital storage of value and a medium of exchange. Cryptocurrencies are getting more popular with each day. The demand for them is ever-increasing and so is the price.",
+  "where_is":"Where will the cryptocurrency be stored?",
+  "where_is_text":"A cryptocurrency is a digital currency designed and controlled by a special encryption technology. It serves as a digital storage of value and a medium of exchange. Cryptocurrencies are getting more popular with each day. The demand for them is ever-increasing and so is the price.",
+  "how_can":"How can I withdraw Bitcoin?",
+  "how_can_text":"A cryptocurrency is a digital currency designed and controlled by a special encryption technology. It serves as a digital storage of value and a medium of exchange. Cryptocurrencies are getting more popular with each day. The demand for them is ever-increasing and so is the price.",
+  "what_commis":"What is the commission for Bitcoin withdrawal?",
+  "what_commis_text":"A cryptocurrency is a digital currency designed and controlled by a special encryption technology. It serves as a digital storage of value and a medium of exchange. Cryptocurrencies are getting more popular with each day. The demand for them is ever-increasing and so is the price.",
+  "what_terms":"What are the terms of Bitcoin withdrawal?",
+  "what_terms_text":"A cryptocurrency is a digital currency designed and controlled by a special encryption technology. It serves as a digital storage of value and a medium of exchange. Cryptocurrencies are getting more popular with each day. The demand for them is ever-increasing and so is the price.",
+  "when_i":"When I’m buying a cryptocurrency am I buying it from IQ Option?",
+  "when_i_text":"A cryptocurrency is a digital currency designed and controlled by a special encryption technology. It serves as a digital storage of value and a medium of exchange. Cryptocurrencies are getting more popular with each day. The demand for them is ever-increasing and so is the price.",
+  "risk_warn":"risk warning",
+  "risk_text":"Cryptocurrencies are highly volatile, risky and complex products. Due to wide price fluctuations, trading them may result in significant loss over a short period of time. Leverage can work both to your advantage and disadvantage. As a result, trading cryptocurrencies may not be suitable for all investors, and you should never invest money that you cannot afford to lose.",
+  "non_exl":"You are granted limited non-exclusive non-transferable rights to use the IP provided on this website for personal and non-commercial purposes in relation to the services offered on the Website only.",
+  "language":"Language",
+  "terms":"Terms & Conditions",
+  "option":"IQ Option, © 2013 - 2018"
+  }
   "russ":
   {
    "buy":"Банк",
    "amount":"Сумма",
-   "invest":"Инвестиционные лимиты: $10.00 - $20,000.00"
+   "invest":"Инвестиционные лимиты: $10.00 - $20,000.00",
+   "uget":"Вы получите",
+   "commision":"Комиссия включена",
+   "visa_master":"картой Visa/Master",
+   "people_buy":"человек уже купили криптовалюту на IQ Option",
+   "people_invest":"уже инвестировали в криптовалюту на IQ Option",
+   "help":"Помощь",
+   "what_is":"Что такое криптовалюта?",
+   "what_is_text":"Криптовалюта — это цифровая валюта, которая разработана и управляется специальной технологией шифрования. Это удобное средство хранения и обмена: криптовалюты становятся все популярнее с каждым днем. Спрос на них, а также их стоимость постоянно растет.",
+   "is_safe":"Купить криптовалюту — безопасно и законно?",
+   "is_safe_text":"Да, покупать криптовалюту абсолютно законно. IQ Option использует современные протоколы безопасности и методы шифрования, чтобы гарантировать безопасность ваших средств (как наличных денег, так и криптовалюты).",
+   "where_is":"Где будет храниться криптовалюта?",
+   "where_is_text":"Купленная криптовалюта будет храниться в вашем кошельке на платформе IQ Option. Кошелек создается автоматически после регистрации. Вы всегда можете вывести свою криптовалюту на внешний электронный кошелек.",
+   "how_can":"Как вывести Bitcoin?",
+   "how_can_text":"Чтобы вывести Bitcoin, нужно создать Bitcoin-кошелек, если у вас его еще нет. В Интернете представлено множество вариантов. Напоминаем, что с каждого вывода средств снимается комиссия. В качестве меры предосторожности компания ограничивает сумму вывода криптовалюты суммой депозита, сделанного с карты с использованием пароля 3D-Secure. Например, чтобы вывести Bitcoin стоимостью 500 долларов, убедитесь, что вы внесли депозит на сумму не менее 500 долларов с вашей карты с помощью пароля 3D-Secure. Возможно, вам также придется загрузить цветные копии своих документов, если вы не сделали этого ранее.
+* Технология 3D-Secure позволяет безошибочно идентифицировать держателя карты, осуществляющего платеж или перевод в Интернете. Каждая операция подтверждается вводом специального SMS-кода. Код направляется держателю карты в SMS-сообщении на номер его мобильного телефона, зарегистрированный в его Банке. 
+** Рекуррентные платежи (1-Click), выполненные на платформе, не идут в зачет обеспечения вывода криптовалюты, даже если сама карта поддерживает проверку 3D-S. Выполнить 3D-S платеж по привязанной карте клиент может, поставив соответствующий чек-бокс на странице оплаты. Внимание В отдельных случаях шаг проверки 3D-S может быть пропущен даже при поддержке технологии самой картой. Это связано со спецификой работы банков в ряде регионов (в том числе Индия, ЮАР, Пакистан и др.). В данный момент мы работаем над реализацией этой возможности в этих регионах.",
+   "what_commis":"Какова комиссия за вывод Bitcoin?",
+   "what_commis_text":"Комиссия за вывод BTC составляет 0,05% от суммы вывода + 0,001 BTC",
+   "what_terms":"Каковы условия вывода Bitcoin?",
+   "what_terms_text":"Все заявки на вывод средств обрабатываются в течение 1—3 рабочих дней. Вам нужно будет загрузить на свой профиль копию удостоверения личности, паспорта или водительских прав и верифицировать банковские карты, которыми вы пользовались.",
+   "when_i":"Когда я покупаю криптовалюту на платформе, я покупаю ее у IQ Option?",
+   "when_i_text":"При покупке криптовалюты на платформе IQ Option компания покупает указанное количество за вас на криптобирже.",
+   "risk_warn":"предупреждение о рисках",
+   "risk_text":"Криптовалюта — крайне неустойчивый, высокорисковый и сложный продукт. Из-за сильных ценовых колебаний торговля криптовалютой может привести к значительным убыткам в кратчайшие сроки. Использование кредитного плеча может сказаться на вашем финансовом положении как положительно, так и отрицательно. Торговля криптовалютой подходит далеко не всем инвесторам. Никогда не инвестируйте больше, чем вы можете себе позволить.",
+   "non_exl":"Вам предоставляются ограниченные неисключительные не подлежащие передаче права на использование ИС, размещенной на этом сайте, для личных некоммерческих целей только в отношении услуг, предлагаемых на сайте.",
+   "language":"Язык",
+   "terms":"Положения и условия",
+   "option":"IQ Option, © 2013 - 2018"
   }
- }
+}
