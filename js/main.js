@@ -47,6 +47,8 @@ function prev()
 function resetLang(jsonData)
 {
  $(".cryp_text").text(jsonData.buy)
+ $("#amount").text(jsonData.amount)
+ $("#invest").text(jsonData.invest)
 }
 function changeLang(language)
 {

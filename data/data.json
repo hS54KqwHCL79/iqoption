@@ -1,10 +1,22 @@
 ﻿{
  "eng":
  {
-  "buy":"Buy Cryptocurrency With a Bank Card"
+  "buy":"Buy Cryptocurrency With a Bank Card",
+  "amount":"Amount",
+  "invest":"Investment Limits: $10.00 - $20,000.00",
+  "uget":"You get",
+  "commision":"Commission included",
+  "visa_master":"with Visa/Master",
+  "people_buy":"people have already bought Cryptocurrencies with IQ Option",
+  "people_invest":"already invested into Cryptocurrencies with IQ Option",
+  "help":"Help",
+  "what_is":"What is a Cryptocurrency?"
+
  },
   "russ":
   {
-   "buy":"Банк"
+   "buy":"Банк",
+   "amount":"Сумма",
+   "invest":"Инвестиционные лимиты: $10.00 - $20,000.00"
   }
  }
