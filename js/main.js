@@ -46,6 +46,7 @@ function prev()
 
 function resetLang(jsonData)
 {
+ console.log("reseting language")
  $(".cryp_text").text(jsonData.buy)
  $("#amount").text(jsonData.amount)
  $("#invest").text(jsonData.invest)
@@ -89,13 +90,14 @@ function changeLang(language)
 		success: function (data) {
 			var stringy = JSON.stringify(data)
 			var json    = JSON.parse(stringy)
+			console.log("succes")
 			resetLang(json[language])
 		}
 	   }); 
 }
  $(document).ready(function()
  {
-  $("#language").change(function()
+  $("#languageSelect").change(function()
   {
    var selectLang = $(this).children(":selected").attr("value")
    console.log($(this).children(":selected").attr("value"))
