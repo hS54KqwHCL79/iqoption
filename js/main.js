@@ -158,6 +158,7 @@ function revod(result, currency, crypt)
    $("#name_crypt").text("buy "+CURRENT_CURRENCY)
    perevod(money, cur, CURRENT_CURRENCY)
   })
+
   $("#languageSelect").change(function()
   {
    var selectLang = $(this).children(":selected").attr("value")
