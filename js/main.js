@@ -111,8 +111,8 @@ function changeLang(language)
 		},
 		success: function (data) {
 			var stringy   = JSON.stringify(data)
-			 = JSON.parse(stringy)
-			console.log("succes"+CURRENCY_DATA)
+			json = JSON.parse(stringy)
+			resetLang(json[language])
 		}
 	   }); 
 }
@@ -127,7 +127,6 @@ function perevod(money, currency, crypt)
 function revod(result, currency, crypt)
 {
  var money = result*CURRENCY_DATA[crypt][currency]/0.9
- console.log(money)
  $("#moneyCash").attr("value", money)
 }
 
@@ -161,7 +160,6 @@ function revod(result, currency, crypt)
   $("#languageSelect").change(function()
   {
    var selectLang = $(this).children(":selected").attr("value")
-   console.log($(this).children(":selected").attr("value"))
    changeLang(selectLang)
   })
   
