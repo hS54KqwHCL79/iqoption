@@ -1,6 +1,7 @@
 ﻿var Status = 1
 var lang = 'eng'
 var CURRENCY_DATA = {}
+var CURRENT_CURRENCY = 'bitcoin'
 
 function isNumber(evt){
     var charCode = (evt.which) ? evt.which : event.keyCode
@@ -23,7 +24,7 @@ function isNumber2(evt){
 	{
 	   var currency = $("#currency_money").children(":selected").attr("value")
 	   var money = $("#moneyCash").val()
-	   revod(money, currency, 'bitcoin') 
+	   revod(money, currency, CURRENT_CURRENCY) 
 	   return true
 	}
 }
@@ -146,10 +147,17 @@ function revod(result, currency, crypt)
 			var stringy = JSON.stringify(data)
 			var json    = JSON.parse(stringy)
 			CURRENCY_DATA = json
-			perevod(1000,'usd','bitcoin')
+			perevod(1000,'usd', CURRENT_CURRENCY)
 		}
 	   }); 
 
+  $(".items li").click(function()
+  {
+   CURRENT_CURRENCY = $(this).children("div").attr("id")
+   var money = $("#moneyCash").val()
+   var cur   = $("#currency_money").children(":selected").attr('value')
+   perevod(money, cur, CURRENT_CURRENCY)
+  })
   $("#languageSelect").change(function()
   {
    var selectLang = $(this).children(":selected").attr("value")
@@ -161,7 +169,7 @@ function revod(result, currency, crypt)
   {
    var currency = $(this).children(":selected").attr("value")
    var money = $("#moneyCash").attr("value")
-   perevod(money, currency, 'bitcoin')
+   perevod(money, currency, CURRENT_CURRENCY)
   })
 
   $(".acor_text").hide()
