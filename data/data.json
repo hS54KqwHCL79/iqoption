@@ -46,6 +46,8 @@
   "sign_text3":"Fastest Customer Service",
   "sign_sub3":"Get any problem solved in just 40 seconds",
   "email_input":"E-mail",
+  "name_input":"Name",
+  "teleplone":"Telephone",
   "pass_input":"Password",
   "button_header":"sign up",
   "button_text_title":"and go to payment"
@@ -97,8 +99,10 @@
    "sign_text3":"Самая быстрая служба поддержки",
    "sign_sub3":"Решение любой проблемы за 40 секунд",
    "email_input":"E-mail",
+   "name_input":"Имя",
+   "teleplone":"Телефон",
    "pass_input":"Пароль",
    "button_header":"регистрация",
-   "button_text_title":"and go to payment"
+   "button_text_title":"и перейти к оплате"
   }
 }
