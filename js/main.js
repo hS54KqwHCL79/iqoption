@@ -69,7 +69,6 @@ function prev()
 
 function resetLang(jsonData)
 {
- console.log("reseting language")
  $(".cryp_text").text(jsonData.buy)
  $("#amount").text(jsonData.amount)
  $("#invest").text(jsonData.invest)
@@ -122,7 +121,6 @@ function changeLang(language)
 function perevod(money, currency, crypt)
 {
  var result = money*0.9/CURRENCY_DATA[crypt][currency]
- console.log("money = "+money+" currency = "+currency+" crypt = "+crypt+" result = "+result)
  $("#result").attr("value", result)
 }
 
