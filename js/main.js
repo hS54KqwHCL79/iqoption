@@ -104,15 +104,15 @@ function prev()
   {
    case 2:
     $(".items").css("transform","translate(0%)")
-    $("#dot_1").removeClass("colour_dot")
-    $("#dot_2").addClass("colour_dot")
+    $("#dot_2").removeClass("colour_dot")
+    $("#dot_1").addClass("colour_dot")
     Status--
    break;
 
    case 3:
     $(".items").css("transform","translate(-102%)")
-    $("#dot_2").removeClass("colour_dot")
-    $("#dot_3").addClass("colour_dot")
+    $("#dot_3").removeClass("colour_dot")
+    $("#dot_2").addClass("colour_dot")
     Status--
    break;
   /*case 3
