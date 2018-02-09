@@ -50,7 +50,8 @@
   "teleplone":"Telephone",
   "pass_input":"Password",
   "button_header":"sign up",
-  "button_text_title":"and go to payment"
+  "button_text_title":"and go to payment",
+  "accept":"I accept terms of use"
   },
   "russ":
   {
@@ -103,6 +104,7 @@
    "teleplone":"Телефон",
    "pass_input":"Пароль",
    "button_header":"регистрация",
-   "button_text_title":"и перейти к оплате"
+   "button_text_title":"и перейти к оплате",
+   "accept":"Я принимаю правила и условия"
   }
 }
