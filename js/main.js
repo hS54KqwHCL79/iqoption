@@ -34,7 +34,8 @@ function next()
  var wdth = $(window).width()
  if(Status == 2)
  {
-  $(".items").css("transform","translate(-183%)")
+  if(wdth > "768") $(".items").css("transform","translate(-183%)")
+  else $(".items").css("transform","translate(-183%)")
   $("#dot_2").removeClass("colour_dot")
   $("#dot_3").addClass("colour_dot")
   Status++
