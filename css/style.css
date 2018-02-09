@@ -599,11 +599,19 @@ select
   display:flex; 
   flex-direction:column; 
   align-items:center; 
-  width:90%;
+  width:100%;
+  border-top:1px solid grey;
  }
  .left_side_form > .big_blue_button
  {
   width:210px;
+ }
+}
+@media screen and (max-width:768px)
+{
+ .label_check
+ {
+  margin-left:55px;
  }
 }
 .form_inputs
@@ -644,6 +652,29 @@ select
  line-height:20px;
 }
 
+@media screen and (max-width:768px)
+{
+ .line_for
+ {
+  border:1px solid black;
+ }
+}
+
+@media screen and (max-width:768px)
+{
+ .svg
+ {
+  width:50%;
+ }
+}
+
+@media screen and (min-width:768px)
+{
+ .svg
+ {
+  width:7%;
+ }
+}
 
 .modal {
     display: none; /* Hidden by default */
