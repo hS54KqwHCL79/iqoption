@@ -24,7 +24,7 @@
  display:flex;
  flex-direction:column;
  box-shadow:0 0 16px 1px rgba(0,0,0,.05);
- padding:15px;
+ padding:15px; 
  align-items:center;
 }
 }
@@ -238,6 +238,7 @@ a:hover {
 .inputs
 {
  display:flex;
+ flex-wrap:wrap;
  justify-content:center;
  margin-top:75px;
  align-items:center;
@@ -278,15 +279,31 @@ a:hover {
  padding:5px;
 }
 
-.container
+@media screen and (max-width:764px)
 {
- display:flex;
- height:75px;
- border:1px solid black;
- padding:30px 55px;
- position:relative;
- border-radius:3px;
- border:1px solid rgba(0, 0, 0, 0.1);
+ .container
+ {
+  display:flex;
+  height:75px;
+  border:1px solid black;
+  padding:18px 14px;
+  position:relative;
+  border-radius:3px;
+  border:1px solid rgba(0, 0, 0, 0.1);
+ }
+}
+@media screen and (min-width:764px)
+{
+ .container
+ {
+  display:flex;
+  height:75px;
+  border:1px solid black;
+  padding:18px 55px;
+  position:relative;
+  border-radius:3px;
+  border:1px solid rgba(0, 0, 0, 0.1);
+ }
 }
 .header_cont
 {
@@ -310,8 +327,7 @@ a:hover {
 }
 .sub_title
 {
- position:absolute; 
- top:100px;
+ padding:7px;
  font-family:MonsLight;
  font-size:12px;
 }
@@ -349,9 +365,9 @@ a:hover {
  .info
  {
   display:flex;
-  padding:25px 77px;
+  padding:25px 16px;
   background:#f9fbff;
-  margin-right:15px;
+  margin:15px 5px;
   border-radius:3px;
   margin-top:15px;
  } 
@@ -507,12 +523,44 @@ select
  margin-left:10px; 
  margin-top:10px;
 }
-.form_row
+@media screen and (min-width:764px)
 {
- display:flex;
- justify-content:center;
- background:#f9fbff;
- padding:35px;
+ .form_row
+ {
+  display:flex;
+  justify-content:center;
+  background:#f9fbff;
+  padding:35px;
+ }
+ .left_side_form
+ {
+  display:flex; 
+  flex-direction:column; 
+  align-items:start; 
+  width:20%;
+ }
+}
+@media screen and (max-width:764px)
+{
+ .form_row
+ {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  background:#f9fbff;
+  padding:35px;
+ }
+ .left_side_form
+ {
+  display:flex; 
+  flex-direction:column; 
+  align-items:center; 
+  width:90%;
+ }
+ .left_side_form .big_blue_button
+ {
+  width:210px;
+ }
 }
 .form_inputs
 {
