@@ -115,9 +115,6 @@ function prev()
     $("#dot_2").addClass("colour_dot")
     Status--
    break;
-  /*case 3
-  case 4
-  case 5*/
   }
  }
  else

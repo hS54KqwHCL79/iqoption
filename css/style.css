@@ -285,18 +285,46 @@ a:hover {
  font-family:MonsLight;
  font-size:12px;
 }
-.row
+@media screen and (max-width:764px)
 {
- display:flex;
- justify-content:center;
+ .row
+ {
+  display:flex;
+  flex-wrap:wrap;
+  margin-top:15px;
+  justify-content:center;
+ }
 }
-.info
+@media screen and (min-width:764px)
 {
- display:flex;
- padding:25px 77px;
- background:#f9fbff;
- margin-right:15px;
- border-radius:3px;
+ .row
+ {
+  display:flex;
+  justify-content:center;
+ }
+}
+@media screen and (min-width:764px)
+{
+ .info
+ {
+  display:flex;
+  padding:25px 77px;
+  background:#f9fbff;
+  margin-right:15px;
+  border-radius:3px;
+ }
+}
+@media screen and (max-width:764px)
+{
+ .info
+ {
+  display:flex;
+  padding:25px 77px;
+  background:#f9fbff;
+  margin-right:15px;
+  border-radius:3px;
+  margin-top:15px;
+ } 
 }
 .info > div
 {
