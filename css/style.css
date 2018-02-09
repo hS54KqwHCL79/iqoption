@@ -74,6 +74,14 @@
  display:inline-block;
  width:20%;
 }
+@media screen and (max-width:768px)
+{
+ .items li
+ {
+  display:inline-block;
+  width:33%;
+ }
+}
 .carusel_item
 {
  display:flex;
@@ -177,6 +185,15 @@ a:hover {
  margin-top:75px;
  align-items:center;
 }
+@media screen and (max-width:768px)
+{
+ .inputs
+ {
+  display:flex;
+  flex-direction:column;
+
+ }
+}
 .big_blue_button
 {
  display:flex;
@@ -207,7 +224,8 @@ a:hover {
 
 .container
 {
- height:250px;
+ display:flex;
+ height:75px;
  border:1px solid black;
  padding:30px 55px;
  position:relative;

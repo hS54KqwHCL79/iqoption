@@ -31,6 +31,7 @@ function isNumber2(evt){
 
 function next()
 {
+ var wdth = $(window).width()
  if(Status == 2)
  {
   $(".items").css("transform","translate(-183%)")
