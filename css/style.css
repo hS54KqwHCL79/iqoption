@@ -245,7 +245,6 @@ a:hover {
 {
  display:flex;
  justify-content:center;
- margin-top:95px;
 }
 .info
 {
@@ -409,7 +408,7 @@ select
 .form_row
 {
  display:flex;
- justify-content:space-around;
+ justify-content:center;
  background:#f9fbff;
  padding:35px;
 }
@@ -425,3 +424,31 @@ select
  width:100%;
  margin-bottom:10px;
 }
+.sign_row_text
+{
+ display:flex;
+ padding:10px;
+}
+.sign_text_option
+{
+ display:flex; 
+ flex-direction:column;
+ padding:10px;
+}
+.sign_text_header
+{
+ color:#4982ff;
+ font-family:MonsBold;
+ font-size:14px;
+ line-height:20px;
+}
+.sign_text_text
+{
+ color:#4e4c67;
+ font-size:14px;
+ font-family:MonsRegular;
+ line-height:20px;
+}
+/*
+color:#4982ff;
+*/
