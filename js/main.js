@@ -206,6 +206,7 @@ function resetLang(jsonData)
  $("#input_email").attr('placeholder', jsonData.input_email)
  $("#button_header").text(jsonData.button_header)
  $("#button_text_title").text(jsonData.button_text_title)
+ $("#terms_of_use").text(jsonData.accept)
 
 }
 
