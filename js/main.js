@@ -32,30 +32,68 @@ function isNumber2(evt){
 function next()
 {
  var wdth = $(window).width()
- switch (Status)
+ if (wdth > 1024)
  {
-  case 1:
-   $(".items").css("transform","translate(-102%)")
-   $("#dot_1").removeClass("colour_dot")
-   $("#dot_2").addClass("colour_dot")
-   Status++
-  break;
+  switch (Status)
+  {
+   case 1:
+    $(".items").css("transform","translate(-102%)")
+    $("#dot_1").removeClass("colour_dot")
+    $("#dot_2").addClass("colour_dot")
+    Status++
+   break;
 
-  case 2:
-/*
--99%
--201%
--338%
--375%
-*/
-   $("#dot_2").removeClass("colour_dot")
-   $("#dot_3").addClass("colour_dot")
-   Status++
-  break;
+   case 2:
+    $(".items").css("transform","translate(-183%)")
+    $("#dot_2").removeClass("colour_dot")
+    $("#dot_3").addClass("colour_dot")
+    Status++
+   break;
   /*case 3
   case 4
   case 5*/
+  }
  }
+ else
+ {
+  switch (Status)
+  {
+   case 1:
+    $(".items").css("transform","translate(-99%)")
+    $("#dot_1").removeClass("colour_dot")
+    $("#dot_2").addClass("colour_dot")
+    Status++
+   break;
+
+   case 2:
+    $(".items").css("transform","translate(-201%)")
+    $("#dot_2").removeClass("colour_dot")
+    $("#dot_3").addClass("colour_dot")
+    Status++
+   break;
+   
+   case 3:
+    $(".items").css("transform","translate(-301%)")
+    $("#dot_3").removeClass("colour_dot")
+    $("#dot_4").addClass("colour_dot")
+    Status++
+    break;
+
+	case 4:
+     $(".items").css("transform","translate(-372%)")
+     $("#dot_4").removeClass("colour_dot")
+     $("#dot_5").addClass("colour_dot")
+     Status++
+	break;
+	
+	case 5:
+	 $(".items").css("transform","translate(-372%)")
+     $("#dot_4").removeClass("colour_dot")
+     $("#dot_5").addClass("colour_dot") 
+	 break;
+  }
+ }
+}
  /*if(Status == 2)
  {
   if(wdth > "1024") $(".items").css("transform","translate(-183%)")
@@ -71,8 +109,6 @@ function next()
   $("#dot_2").addClass("colour_dot")
   Status++
  }*/
-
-}
 function prev()
 {
  if(Status == 2)
