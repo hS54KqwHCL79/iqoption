@@ -94,36 +94,64 @@ function next()
   }
  }
 }
- /*if(Status == 2)
- {
-  if(wdth > "1024") $(".items").css("transform","translate(-183%)")
-  else $(".items").css("transform","translate(-183%)")
-  $("#dot_2").removeClass("colour_dot")
-  $("#dot_3").addClass("colour_dot")
-  Status++
- }
- if(Status == 1)
- {
-  $(".items").css("transform","translate(-102%)")
-  $("#dot_1").removeClass("colour_dot")
-  $("#dot_2").addClass("colour_dot")
-  Status++
- }*/
+
 function prev()
 {
- if(Status == 2)
+ var wdth = $(window).width()
+ if (wdth > 1024)
  {
-  $(".items").css("transform", "translate(0%)")
-  $("#dot_2").removeClass("colour_dot")
-  $("#dot_1").addClass("colour_dot")
-  Status--
+  switch (Status)
+  {
+   case 2:
+    $(".items").css("transform","translate(0%)")
+    $("#dot_1").removeClass("colour_dot")
+    $("#dot_2").addClass("colour_dot")
+    Status--
+   break;
+
+   case 3:
+    $(".items").css("transform","translate(-102%)")
+    $("#dot_2").removeClass("colour_dot")
+    $("#dot_3").addClass("colour_dot")
+    Status--
+   break;
+  /*case 3
+  case 4
+  case 5*/
+  }
  }
- if(Status == 3)
+ else
  {
-  $(".items").css("transform", "translate(-102%)")
-  $("#dot_3").removeClass("colour_dot")
-  $("#dot_2").addClass("colour_dot")
-  Status--
+  switch (Status)
+  {
+   case 2:
+    $(".items").css("transform","translate(0%)")
+    $("#dot_2").removeClass("colour_dot")
+    $("#dot_1").addClass("colour_dot")
+    Status--
+   break;
+   
+   case 3:
+    $(".items").css("transform","translate(-99%)")
+    $("#dot_3").removeClass("colour_dot")
+    $("#dot_2").addClass("colour_dot")
+    Status--
+    break;
+
+	case 4:
+     $(".items").css("transform","translate(-201%)")
+     $("#dot_4").removeClass("colour_dot")
+     $("#dot_3").addClass("colour_dot")
+     Status--
+	break;
+	
+	case 5:
+	 $(".items").css("transform","translate(-301%)")
+     $("#dot_5").removeClass("colour_dot")
+     $("#dot_4").addClass("colour_dot") 
+     Status--
+	 break;
+  }
  }
 }
 
