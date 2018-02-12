@@ -148,6 +148,7 @@ setParametersToLS();
     }
 
     function ShowError (error) {
+	 console.log(error)
         if (error === "email") {
             $(".hidden-message").text("Такой адрес почты уже существует");
             $(".hidden-message").css("display", "block");
