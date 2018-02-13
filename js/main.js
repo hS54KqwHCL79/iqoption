@@ -297,7 +297,7 @@ function getDataApi(crypt)
 	   {
         console.log(result.countryCode);
 		/*IF UA OR NOT RUSSIA GET ENGLISH TEXT*/
-		if(result.countrCode == "UA" || !(result.countrCode == "RUS"))
+		if(result.countrCode == "UA" || !(result.countrCode == "RU"))
 		{
 		 changeLang("eng")
          document.cookie = "your_lang=eng"
