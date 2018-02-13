@@ -4,7 +4,7 @@ var lang = 'eng'
 var CURRENCY_DATA = {}
 var CURRENT_CURRENCY = 'BTC' //DEFAULT BTC 
 
-//LIST OF ALL CRYPTO
+//LIST OF ALL USED CRYPTO
 var CryptArry = ['BTC', 'ETH', 'XRP', 'BHC', 'LTC', 'NEO', 'XLM', 'DASH', 'TRX', 'ETC', 'QTUM', 'ZEC', 'OMNI', 'BTG'];
 
 //Only numbers
@@ -230,7 +230,7 @@ function changeLang(language)
 		dataType: "json",
 		error: function (request, error) {
 			console.log(arguments);
-			alert(" Can't do because: " + error);
+			alert("Cannot get request from DATA: " + error);
 		},
 		success: function (data) {
 			document.cookie = "your_lang="+language
@@ -242,13 +242,15 @@ function changeLang(language)
 	   }); 
 }
 
+//changing money to crypt
 function perevod(money, currency, crypt)
 {
- console.log(CURRENCY_DATA[crypt][currency])
+ //console.log(CURRENCY_DATA[crypt][currency])
  var result = money*0.9/CURRENCY_DATA[crypt][currency]
  $("#result").attr("value", result)
 }
 
+//reverse chang brypt to money
 function revod(result, currency, crypt)
 {
  var money = result*CURRENCY_DATA[crypt][currency]/0.9
@@ -267,7 +269,7 @@ function getDataApi(crypt)
   dataType:'json',
   error: function(request, error)
 	{
-	 console.log(arguments)
+	 console.log(error)
 	 alert("Can't take request")
 	},
   success: function(data)
@@ -280,6 +282,7 @@ function getDataApi(crypt)
  }
 
 
+ //Getting cookie by key name
  function getCookie(name) {
   var matches = document.cookie.match(new RegExp(
     "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
@@ -289,11 +292,12 @@ function getDataApi(crypt)
  
  $(document).ready(function()
  {
-	/*GETTING GEOLOCATION*/
+  /*GETTING GEOLOCATION*/
   if(!getCookie("your_lang"))
   {
 	if ("geolocation" in navigator) 
 	{
+	 //Getting location and check what is by api
      navigator.geolocation.getCurrentPosition(function(position) {
        $.getJSON('http://ws.geonames.org/countryCode', {
         lat: position.coords.latitude,
@@ -303,7 +307,7 @@ function getDataApi(crypt)
 		},
        function(result)
 	   {
-        console.log(result.countryCode);
+      //  console.log(result.countryCode);
 		/*IF UA OR NOT RUSSIA GET ENGLISH TEXT*/
 		if(result.countrCode == "UA" || !(result.countrCode == "RU"))
 		{
@@ -318,7 +322,7 @@ function getDataApi(crypt)
         })
        });
 	 } else {
-	  /* геолокация НЕдоступна */
+	  /* GEOLOCATION CANNOT BE USED */
 	  console.log("cannot use geolocation")
 	}
   }
@@ -327,7 +331,7 @@ function getDataApi(crypt)
    changeLang(getCookie("your_lang"))
   }
 
-  //Getting all items from Cryp array and send api
+  //Getting all items from Crypt array and send api
   CryptArry.forEach(function(item, i, CryptArry) 
 	{
 	 getDataApi(item)
