@@ -1,7 +1,7 @@
 ﻿var Status = 1
 var lang = 'eng'
 var CURRENCY_DATA = {}
-var CURRENT_CURRENCY = 'USD'
+var CURRENT_CURRENCY = 'BTC'
 var CryptArry = ['BTC', 'ETH', 'XRP', 'BHC', 'LTC', 'NEO', 'XLM', 'DASH', 'TRX', 'ETC', 'QTUM', 'ZEC', 'OMNI', 'BTG'];
 
 function isNumber(evt){
@@ -232,6 +232,7 @@ function changeLang(language)
 
 function perevod(money, currency, crypt)
 {
+ console.log(CURRENCY_DATA[crypt][currency])
  var result = money*0.9/CURRENCY_DATA[crypt][currency]
  $("#result").attr("value", result)
 }
@@ -260,9 +261,9 @@ function getDataApi(crypt)
   success: function(data)
 	{
 	 CURRENCY_DATA[crypt] = data
+	 perevod(1000, "USD", "BTC")
 	 $("#"+crypt).children(".crypt_prize").text("$"+CURRENCY_DATA[crypt].USD)
-	// console.log(CURRENCY_DATA[crypt].USD)
-	} 
+	}
   })
  }
 
@@ -273,23 +274,6 @@ function getDataApi(crypt)
 	{
 	 getDataApi(item)
 	});
-
- /* $.ajax({
-        type:     "GET",
-		cache:    false,
-		url:      "data/currency.json",
-		dataType: "json",
-		error: function (request, error) {
-			console.log(arguments);
-			alert(" Can't do because: " + error);
-		},
-		success: function (data) {
-			var stringy = JSON.stringify(data)
-			var json    = JSON.parse(stringy)
-			CURRENCY_DATA = json
-			perevod(1000,'usd', CURRENT_CURRENCY)
-		}
-	   }); */
 
   $(".items li").click(function()
   {
@@ -309,13 +293,18 @@ function getDataApi(crypt)
   $("#currency_money").change(function()
   {
    var currency = $(this).children(":selected").attr("value")
+   var cur_char = ""
    var money = $("#moneyCash").attr("value")
+   if (currency == "USD") cur_char = "$"
+   if (currency == "GBP") cur_char = "£"
+   if (currency == "EUR") cur_char = "€"
+   if (currency == "RUB") cur_char = "₽"
    CryptArry.forEach(function(item, i, CryptArry) 
 	{
 	 $(".items li")
 	 .children("#"+CryptArry[i])
 	 .children(".crypt_prize")
-	 .text(CURRENCY_DATA[CryptArry[i]][currency])
+	 .text(cur_char + CURRENCY_DATA[CryptArry[i]][currency])
 	});
    perevod(money, currency, CURRENT_CURRENCY)
   })
