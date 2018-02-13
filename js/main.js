@@ -211,8 +211,10 @@ function resetLang(jsonData)
 
 }
 
+/*Changing language and write in cookie*/
 function changeLang(language)
 {
+ console.log("Language = "+document.cookie.your_lang)
  $.ajax({
         type:     "GET",
 		cache:    false,
@@ -223,6 +225,8 @@ function changeLang(language)
 			alert(" Can't do because: " + error);
 		},
 		success: function (data) {
+			document.cookie = "your_lang="+language
+			console.log("Language = "+document.cookie.your_lang)
 			var stringy   = JSON.stringify(data)
 			json = JSON.parse(stringy)
 			resetLang(json[language])
@@ -267,32 +271,54 @@ function getDataApi(crypt)
   })
  }
 
+
+ function getCookie(name) {
+  var matches = document.cookie.match(new RegExp(
+    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+  ));
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+}
  
  $(document).ready(function()
  {
+	/*GETTING GEOLOCATION*/
+  if(!getCookie("your_lang"))
+  {
+   alert(getCookie("your_lang"))
 	if ("geolocation" in navigator) 
 	{
-      navigator.geolocation.getCurrentPosition(function(position) {
-        $.getJSON('http://ws.geonames.org/countryCode', {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-			username:'Andrew',
-            type: 'JSON'
+     navigator.geolocation.getCurrentPosition(function(position) {
+       $.getJSON('http://ws.geonames.org/countryCode', {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude,
+		username:'Andrew',
+        type: 'JSON'
 		},
-        function(result)
+       function(result)
+	   {
+        console.log(result.countryCode);
+		/*IF UA OR NOT RUSSIA GET ENGLISH TEXT*/
+		if(result.countrCode == "UA" || !(result.countrCode == "RUS"))
 		{
-         console.log(result.countryCode);
-		 if(result.countrCode == "UA" || !(result.countrCode == "RUS"))
-			changeLang("eng")
-		 else
-		   changeLang("rus")
-		 
+		 changeLang("eng")
+         document.cookie = "your_lang=eng"
+		}
+		else //ELSE GET RUSS
+		{
+		 changeLang("rus")
+         document.cookie = "your_lang=russ"
+		}	 
         })
        });
-	} else {
+	 } else {
 	  /* геолокация НЕдоступна */
 	  console.log("cannot use geolocation")
 	}
+  }
+  else 
+  {
+   changeLang(getCookie("your_lang"))
+  }
 
   CryptArry.forEach(function(item, i, CryptArry) 
 	{
