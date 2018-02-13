@@ -247,7 +247,7 @@ function revod(result, currency, crypt)
  $("#moneyCash").attr("value", money)
 }
 
-/*GET API FRO CRYPT_CURRENCY*/
+/*GET API FOR CRYPT_CURRENCY*/
 function getDataApi(crypt)
 {
  var urlApi = "https://min-api.cryptocompare.com/data/price?fsym="+crypt+"&tsyms=USD,EUR,RUB,GBP"
