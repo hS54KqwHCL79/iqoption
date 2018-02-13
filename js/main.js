@@ -1,22 +1,27 @@
 ﻿var Status = 1
 var lang = 'eng'
+//Data about crypto currency curs
 var CURRENCY_DATA = {}
-var CURRENT_CURRENCY = 'BTC'
+var CURRENT_CURRENCY = 'BTC' //DEFAULT BTC 
+
+//LIST OF ALL CRYPTO
 var CryptArry = ['BTC', 'ETH', 'XRP', 'BHC', 'LTC', 'NEO', 'XLM', 'DASH', 'TRX', 'ETC', 'QTUM', 'ZEC', 'OMNI', 'BTG'];
 
+//Only numbers
 function isNumber(evt){
     var charCode = (evt.which) ? evt.which : event.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57))
         return false;
-    else
+    else //Convert money
 	{
 	   var currency = $("#currency_money").children(":selected").attr("value")
 	   var money = $("#moneyCash").val()
-	   perevod(money, currency, CURRENT_CURRENCY) 
+	   perevod(money, currency, CURRENT_CURRENCY) //convert
 	   return true
 	}
 }
 
+//convert money reverse
 function isNumber2(evt){
     var charCode = (evt.which) ? evt.which : event.keyCode
     if (charCode > 31 && (charCode < 48 || charCode > 57))
@@ -25,11 +30,12 @@ function isNumber2(evt){
 	{
 	   var currency = $("#currency_money").children(":selected").attr("value")
 	   var money = $("#moneyCash").val()
-	   revod(money, currency, CURRENT_CURRENCY) 
+	   revod(money, currency, CURRENT_CURRENCY) //reverse
 	   return true
 	}
 }
 
+//slide next item list
 function next()
 {
  var wdth = $(window).width()
@@ -96,6 +102,7 @@ function next()
  }
 }
 
+//Slide prev list item
 function prev()
 {
  var wdth = $(window).width()
@@ -153,6 +160,7 @@ function prev()
  }
 }
 
+/*Reseting data from data.json*/
 function resetLang(jsonData)
 {
  $(".cryp_text").text(jsonData.buy)
@@ -211,7 +219,7 @@ function resetLang(jsonData)
 
 }
 
-/*Changing language and write in cookie*/
+/*Getting data from file and write lang in cookie*/
 function changeLang(language)
 {
  console.log("Language = "+document.cookie.your_lang)
@@ -319,11 +327,13 @@ function getDataApi(crypt)
    changeLang(getCookie("your_lang"))
   }
 
+  //Getting all items from Cryp array and send api
   CryptArry.forEach(function(item, i, CryptArry) 
 	{
 	 getDataApi(item)
 	});
 
+  //changing crypto for item
   $(".items li").click(function()
   {
    CURRENT_CURRENCY = $(this).children("div").attr("id")
@@ -333,12 +343,14 @@ function getDataApi(crypt)
    perevod(money, cur, CURRENT_CURRENCY)
   })
 
+ //Changing language
   $("#languageSelect").change(function()
   {
    var selectLang = $(this).children(":selected").attr("value")
    changeLang(selectLang)
   })
   
+  //Changing currency
   $("#currency_money").change(function()
   {
    var currency = $(this).children(":selected").attr("value")
