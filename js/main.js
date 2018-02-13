@@ -284,7 +284,6 @@ function getDataApi(crypt)
 	/*GETTING GEOLOCATION*/
   if(!getCookie("your_lang"))
   {
-   alert(getCookie("your_lang"))
 	if ("geolocation" in navigator) 
 	{
      navigator.geolocation.getCurrentPosition(function(position) {
