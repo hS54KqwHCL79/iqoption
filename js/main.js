@@ -1,7 +1,8 @@
 ﻿var Status = 1
 var lang = 'eng'
 var CURRENCY_DATA = {}
-var CURRENT_CURRENCY = 'bitcoin'
+var CURRENT_CURRENCY = 'USD'
+var CryptArry = ['BTC', 'ETH', 'XRP', 'BHC', 'LTC', 'NEO', 'XLM', 'DASH', 'TRX', 'ETC', 'QTUM', 'ZEC', 'OMNI', 'BTG'];
 
 function isNumber(evt){
     var charCode = (evt.which) ? evt.which : event.keyCode
@@ -11,7 +12,7 @@ function isNumber(evt){
 	{
 	   var currency = $("#currency_money").children(":selected").attr("value")
 	   var money = $("#moneyCash").val()
-	   perevod(money, currency, 'bitcoin') 
+	   perevod(money, currency, CURRENT_CURRENCY) 
 	   return true
 	}
 }
@@ -241,9 +242,39 @@ function revod(result, currency, crypt)
  $("#moneyCash").attr("value", money)
 }
 
+/*GET API FRO CRYPT_CURRENCY*/
+function getDataApi(crypt)
+{
+ var urlApi = "https://min-api.cryptocompare.com/data/price?fsym="+crypt+"&tsyms=USD,EUR,RUB,GBP"
+ $.ajax(
+ {
+  type: "GET",
+  cache: false,
+  url: urlApi,
+  dataType:'json',
+  error: function(request, error)
+	{
+	 console.log(arguments)
+	 alert("Can't take request")
+	},
+  success: function(data)
+	{
+	 CURRENCY_DATA[crypt] = data
+	 $("#"+crypt).children(".crypt_prize").text("$"+CURRENCY_DATA[crypt].USD)
+	// console.log(CURRENCY_DATA[crypt].USD)
+	} 
+  })
+ }
+
+ 
  $(document).ready(function()
  {
-  $.ajax({
+  CryptArry.forEach(function(item, i, CryptArry) 
+	{
+	 getDataApi(item)
+	});
+
+ /* $.ajax({
         type:     "GET",
 		cache:    false,
 		url:      "data/currency.json",
@@ -258,7 +289,7 @@ function revod(result, currency, crypt)
 			CURRENCY_DATA = json
 			perevod(1000,'usd', CURRENT_CURRENCY)
 		}
-	   }); 
+	   }); */
 
   $(".items li").click(function()
   {
@@ -279,6 +310,13 @@ function revod(result, currency, crypt)
   {
    var currency = $(this).children(":selected").attr("value")
    var money = $("#moneyCash").attr("value")
+   CryptArry.forEach(function(item, i, CryptArry) 
+	{
+	 $(".items li")
+	 .children("#"+CryptArry[i])
+	 .children(".crypt_prize")
+	 .text(CURRENCY_DATA[CryptArry[i]][currency])
+	});
    perevod(money, currency, CURRENT_CURRENCY)
   })
 
