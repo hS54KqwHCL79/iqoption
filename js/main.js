@@ -270,6 +270,30 @@ function getDataApi(crypt)
  
  $(document).ready(function()
  {
+	if ("geolocation" in navigator) 
+	{
+      navigator.geolocation.getCurrentPosition(function(position) {
+        $.getJSON('http://ws.geonames.org/countryCode', {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+			username:'Andrew',
+            type: 'JSON'
+		},
+        function(result)
+		{
+         console.log(result.countryCode);
+		 if(result.countrCode == "UA" || !(result.countrCode == "RUS"))
+			changeLang("eng")
+		 else
+		   changeLang("rus")
+		 
+        })
+       });
+	} else {
+	  /* геолокация НЕдоступна */
+	  console.log("cannot use geolocation")
+	}
+
   CryptArry.forEach(function(item, i, CryptArry) 
 	{
 	 getDataApi(item)
