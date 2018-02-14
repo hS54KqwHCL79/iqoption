@@ -120,11 +120,23 @@
  flex:1;
  overflow:hidden;
 }
-.items
+@media screen and (min-width:768px)
 {
-  white-space: nowrap;
-  margin-left:0%;
-  transition:all 2s;
+ .items
+ {
+   white-space: nowrap;
+   margin-left:0%;
+   transition:all 2s;
+ }
+}
+@media screen and (max-width:768px)
+{
+ .items
+ {
+   white-space: nowrap;
+   margin-left:0%;
+   transition:all 0.5s;
+ }
 }
 .items li
 {
