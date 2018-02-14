@@ -160,10 +160,10 @@ function prev()
 function newPrize(object)
 {
  var result = object.USD - (object.USD - object.USD * 0.15)
- object.USD = (object.USD - object.USD*0.1).toFixed(2)
- object.EUR = (object.EUR - object.EUR*0.1).toFixed(2)
- object.RUB = (object.RUB - object.RUB*0.1).toFixed(2)
- object.GBP = (object.GBP - object.GBP*0.1).toFixed(2)
+ object.USD = (object.USD - object.USD*0.15).toFixed(2)
+ object.EUR = (object.EUR - object.EUR*0.15).toFixed(2)
+ object.RUB = (object.RUB - object.RUB*0.15).toFixed(2)
+ object.GBP = (object.GBP - object.GBP*0.15).toFixed(2)
  //console.log(object.USD)
 }
 /*Reseting data from data.json*/
