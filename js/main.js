@@ -39,7 +39,7 @@ function isNumber2(evt){
 function next()
 {
  var wdth = $(window).width()
- if (wdth > 1024)
+ if (wdth > 768)
  {
   switch (Status)
   {
@@ -66,35 +66,35 @@ function next()
   switch (Status)
   {
    case 1:
-    $(".items").css("transform","translate(-99%)")
+    $(".items").css("transform","translate(-104%)")
     $("#dot_1").removeClass("colour_dot")
     $("#dot_2").addClass("colour_dot")
     Status++
    break;
 
    case 2:
-    $(".items").css("transform","translate(-201%)")
+    $(".items").css("transform","translate(-209%)")
     $("#dot_2").removeClass("colour_dot")
     $("#dot_3").addClass("colour_dot")
     Status++
    break;
    
    case 3:
-    $(".items").css("transform","translate(-274%)")
+    $(".items").css("transform","translate(-312%)")
     $("#dot_3").removeClass("colour_dot")
     $("#dot_4").addClass("colour_dot")
     Status++
     break;
 
 	case 4:
-     $(".items").css("transform","translate(-305%)")
+     $(".items").css("transform","translate(-382%)")
      $("#dot_4").removeClass("colour_dot")
      $("#dot_5").addClass("colour_dot")
      Status++
 	break;
 	
 	case 5:
-	 $(".items").css("transform","translate(-380%)")
+	 $(".items").css("transform","translate(-382%)")
      $("#dot_4").removeClass("colour_dot")
      $("#dot_5").addClass("colour_dot") 
 	 break;
@@ -106,7 +106,7 @@ function next()
 function prev()
 {
  var wdth = $(window).width()
- if (wdth > 1024)
+ if (wdth > 768)
  {
   switch (Status)
   {
