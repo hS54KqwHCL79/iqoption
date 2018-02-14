@@ -292,6 +292,7 @@ function getDataApi(crypt)
  
  $(document).ready(function()
  {
+  $( "#items li" ).on( "swipeleft", function(){alert("swipeleft")} );
   /*GETTING GEOLOCATION*/
   if(!getCookie("your_lang"))
   {
