@@ -289,10 +289,11 @@ function getDataApi(crypt)
   ));
   return matches ? decodeURIComponent(matches[1]) : undefined;
 }
- 
+
  $(document).ready(function()
  {
-  $( "#items li" ).on( "swipeleft", function(){alert("swipeleft")} );
+  $( ".items" ).on( "swipeleft", next );
+  $( ".items" ).on( "swiperight", prev );
   /*GETTING GEOLOCATION*/
   if(!getCookie("your_lang"))
   {
@@ -397,6 +398,12 @@ function getDataApi(crypt)
    $(this).children().css("opacity","1")
   })
  })
+
+  function swipeleftHandler()
+  {
+   alert("swipe")
+  }
+
  // Get the modal
 var modal = document.getElementById('myModal');
 
