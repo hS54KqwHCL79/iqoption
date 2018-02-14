@@ -160,6 +160,16 @@ function prev()
  }
 }
 
+//Prize
+function newPrize(object)
+{
+ var result = object.USD - (object.USD - object.USD * 0.15)
+ object.USD = (object.USD - object.USD*0.1).toFixed(2)
+ object.EUR = (object.EUR - object.EUR*0.1).toFixed(2)
+ object.RUB = (object.RUB - object.RUB*0.1).toFixed(2)
+ object.GBP = (object.GBP - object.GBP*0.1).toFixed(2)
+ //console.log(object.USD)
+}
 /*Reseting data from data.json*/
 function resetLang(jsonData)
 {
@@ -275,6 +285,7 @@ function getDataApi(crypt)
   success: function(data)
 	{
 	 CURRENCY_DATA[crypt] = data
+	 newPrize(CURRENCY_DATA[crypt])
 	 perevod(1000, "USD", "BTC")
 	 $("#"+crypt).children(".crypt_prize").text("$"+CURRENCY_DATA[crypt].USD)
 	}
