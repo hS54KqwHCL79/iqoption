@@ -172,13 +172,27 @@
 {
  cursor:pointer;
 }
-.crypt_name
+@media screen and (min-width:764px)
 {
- padding-top:15px;
- font-family: MonsBold;
- font-size:16px;
- line-height:22px;
+ .crypt_name
+ {
+  padding-top:15px;
+  font-family: MonsBold;
+  font-size:16px;
+  line-height:22px;
+ }
 }
+@media screen and (max-width:425px)
+{
+ .crypt_name
+ {
+  padding-top:15px;
+  font-family: MonsBold;
+  font-size:14px;
+  line-height:22px;
+ }
+}
+
 .crypt_prize
 {
  font-family:MonsRegular;

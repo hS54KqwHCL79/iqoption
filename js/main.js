@@ -80,21 +80,21 @@ function next()
    break;
    
    case 3:
-    $(".items").css("transform","translate(-301%)")
+    $(".items").css("transform","translate(-274%)")
     $("#dot_3").removeClass("colour_dot")
     $("#dot_4").addClass("colour_dot")
     Status++
     break;
 
 	case 4:
-     $(".items").css("transform","translate(-372%)")
+     $(".items").css("transform","translate(-305%)")
      $("#dot_4").removeClass("colour_dot")
      $("#dot_5").addClass("colour_dot")
      Status++
 	break;
 	
 	case 5:
-	 $(".items").css("transform","translate(-372%)")
+	 $(".items").css("transform","translate(-380%)")
      $("#dot_4").removeClass("colour_dot")
      $("#dot_5").addClass("colour_dot") 
 	 break;
