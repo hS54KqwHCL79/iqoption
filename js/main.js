@@ -94,7 +94,7 @@ function next()
 	break;
   }
  }
- console.log(Status)
+ //console.log(Status)
 }
 
 //Slide prev list item
@@ -153,8 +153,7 @@ function prev()
 	 break;
   }
  }
- console.log(Status)
-
+// console.log(Status)
 }
 
 //Prize
