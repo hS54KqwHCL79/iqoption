@@ -92,14 +92,9 @@ function next()
      $("#dot_5").addClass("colour_dot")
      Status++
 	break;
-	
-	case 5:
-	 $(".items").css("transform","translate(-382%)")
-     $("#dot_4").removeClass("colour_dot")
-     $("#dot_5").addClass("colour_dot") 
-	 break;
   }
  }
+ console.log(Status)
 }
 
 //Slide prev list item
@@ -137,27 +132,29 @@ function prev()
    break;
    
    case 3:
-    $(".items").css("transform","translate(-99%)")
+    $(".items").css("transform","translate(-102%)")
     $("#dot_3").removeClass("colour_dot")
     $("#dot_2").addClass("colour_dot")
     Status--
     break;
 
 	case 4:
-     $(".items").css("transform","translate(-201%)")
+     $(".items").css("transform","translate(-209%)")
      $("#dot_4").removeClass("colour_dot")
      $("#dot_3").addClass("colour_dot")
      Status--
 	break;
 	
 	case 5:
-	 $(".items").css("transform","translate(-301%)")
+	 $(".items").css("transform","translate(-312%)")
      $("#dot_5").removeClass("colour_dot")
      $("#dot_4").addClass("colour_dot") 
      Status--
 	 break;
   }
  }
+ console.log(Status)
+
 }
 
 //Prize
