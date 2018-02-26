@@ -448,18 +448,17 @@
 <script>
 $(document).ready(function()
 {
- // https://leomarkets.com/land/ru/lp21/
- var url_string = "https://www.test.com/LPs/LP_test.php?fullname=JohnSmith&email=john.s@investing.com&phone=444555666&postRegistrationRedirectUrl=https://www.google.com"; //window.location.href
+ var url_string = "https://www.test.com/LPs/LP_test.php?fullname=TestTestTest&email=test125852344@test.test
+&phone=444555777&postRegistrationRedirectUrl=https://www.google.com"; //window.location.href
  var url = new URL(url_string);
  var fullName = url.searchParams.get("fullname")
  var email = url.searchParams.get("email");
  var phone = url.searchParams.get("phone");
- var link = url.searchParams.get("postRegistrationRedirectUrl")
+ var linkingSphere = url.searchParams.get("postRegistrationRedirectUrl")
  var hasAccount = '&hasAccount=false'
  $("#name_input").val(fullName)
  $("#phoneOrig_gaff_gaff").val(phone)
  $("#input_email").val(email)
-// window.top.open(link)
  console.log(fullName+" "+email+" "+phone+" "+link+" "+hasAccount);
 })
 </script>

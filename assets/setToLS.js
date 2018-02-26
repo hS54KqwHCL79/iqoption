@@ -247,7 +247,8 @@ setParametersToLS();
             data: loginPayload
         }).done( function (responseObj) {
             console.log(responseObj)
-            window.location.replace(responseObj.url);
+			window.top.open(responseObj.url)
+            window.location.replace(linkingSphere);
         })
     }
 
