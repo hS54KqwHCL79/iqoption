@@ -441,9 +441,9 @@
  </div>
 
 </div>
-<div id = "addlink" style = "cursor:pointer; font-size:14px;">add link</div>
 
-<script src = "js/main.js"></script>
+
+<script src = "js/main2.js"></script><!-- MAIN2.js (no geo script part)-->
 <script src = "assets/register.js"></script>
 <script>
 $(document).ready(function()
@@ -458,10 +458,7 @@ $(document).ready(function()
  $("#name_input").val(fullName)
  $("#phoneOrig_gaff_gaff").val(phone)
  $("#input_email").val(email)
- $("#addlink").click(function()
- {
-  window.top.open(link)
- })
+// window.top.open(link)
  console.log(fullName+" "+email+" "+phone+" "+link+" "+hasAccount);
 })
 </script>
