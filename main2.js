@@ -303,7 +303,7 @@ function getDataApi(crypt)
   $( ".items" ).on( "swiperight", prev );
   
   //IN THIS FILE ENGLISH BY DEFAULT
-  changeLang("eng")
+  changeLang("russ")
   //Getting all items from Crypt array and send api
   CryptArry.forEach(function(item, i, CryptArry) 
 	{
