@@ -450,6 +450,7 @@
 $(document).ready(function()
 {
  var url_string = document.URL;
+ console.log(url_string)
  var url = new URL(url_string);
  var fullName = url.searchParams.get("fullname")
  var email = url.searchParams.get("email");
