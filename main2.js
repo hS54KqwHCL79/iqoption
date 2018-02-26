@@ -228,7 +228,7 @@ function resetLang(jsonData)
 /*Getting data from file and write lang in cookie*/
 function changeLang(language)
 {
- console.log("Language = "+document.cookie.your_lang)
+ //console.log("Language = "+document.cookie.your_lang)
  $.ajax({
         type:     "GET",
 		cache:    false,
@@ -302,7 +302,7 @@ function getDataApi(crypt)
   $( ".items" ).on( "swipeleft", next );
   $( ".items" ).on( "swiperight", prev );
   
-  //IN THIS FILE ENGLISH BY DEFAULT
+  //IN THIS FILE RUSSIAN BY DEFAULT
   changeLang("russ")
   //Getting all items from Crypt array and send api
   CryptArry.forEach(function(item, i, CryptArry) 
