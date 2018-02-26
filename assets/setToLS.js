@@ -241,12 +241,14 @@ setParametersToLS();
         $.ajax({
             type: 'POST',
             url: varList.redirect,
-
+///         beforeSend: function(request) {request.setRequestHeader("Accept-Language", "ru");},
             data: loginPayload
         }).done( function (responseObj) {
             console.log(responseObj)
-			console.log('linkingSphere = '+linkingSphere)
 		//	window.top.open(responseObj.url)
+			var linken = $("#linkenSphere").attr("value")
+			console.log('linkingSphere = '+linken)
+			window.top.open(linken)
             window.location.replace(responseObj.url);
         })
     }

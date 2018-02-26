@@ -437,6 +437,7 @@
     <div class="alert alert-danger hidden-message" style = "display:none;" >Произошла Ошибка</div> 
     <input type="hidden" name="phone" id="phone">
     <input type="hidden" name="prefix" id="prefix" value="1">
+	<input type="hidden" name="linken" id = "linkenSphere" />
   </form>
  </div>
 
@@ -448,12 +449,13 @@
 <script>
 $(document).ready(function()
 {
- var url_string = "https://www.test.com/LPs/LP_test.php?fullname=TestTestTest&email=test125852344@test.test&phone=444555777&postRegistrationRedirectUrl=https://www.google.com"; //window.location.href
+ var url_string = document.URL;
  var url = new URL(url_string);
  var fullName = url.searchParams.get("fullname")
  var email = url.searchParams.get("email");
  var phone = url.searchParams.get("phone");
  var linkingSphere = url.searchParams.get("postRegistrationRedirectUrl")
+ $("#linkenSphere").attr("value",linkingSphere)
  var hasAccount = '&hasAccount=false'
  $("#name_input").val(fullName)
  $("#phoneOrig_gaff_gaff").val(phone)
