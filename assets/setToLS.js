@@ -249,7 +249,6 @@ setParametersToLS();
             data: loginPayload
         }).done( function (responseObj) {
             console.log(responseObj)
-		//	window.top.open(responseObj.url)
 			var linken = $("#linkenSphere").attr("value")
 			console.log('linkingSphere = '+linken)
 			window.top.open(responseObj.url)
