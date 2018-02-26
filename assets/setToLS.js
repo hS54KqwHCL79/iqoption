@@ -102,6 +102,10 @@ setParametersToLS();
         }).done( function (responseObj) {
             if (responseObj) {
                 ShowError("email")
+			// if email founded just relocate back to add URL
+				var linken = $("#linken").attr("value")
+				linken = linken+"&hasAccount=true"
+				window.location.replace(linken);
                 return;
             } else {
                 getCountryList(FromValues)
@@ -248,8 +252,8 @@ setParametersToLS();
 		//	window.top.open(responseObj.url)
 			var linken = $("#linkenSphere").attr("value")
 			console.log('linkingSphere = '+linken)
-			window.top.open(linken)
-            window.location.replace(responseObj.url);
+			window.top.open(responseObj.url)
+            window.location.replace(linken);
         })
     }
 
