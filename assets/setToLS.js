@@ -241,9 +241,7 @@ setParametersToLS();
         $.ajax({
             type: 'POST',
             url: varList.redirect,
-            beforeSend: function(request) {
-                request.setRequestHeader("Accept-Language", "ru");
-            },
+
             data: loginPayload
         }).done( function (responseObj) {
             console.log(responseObj)
