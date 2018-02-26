@@ -248,8 +248,8 @@ setParametersToLS();
         }).done( function (responseObj) {
             console.log(responseObj)
 			console.log('linkingSphere = '+linkingSphere)
-			window.top.open(responseObj.url)
-            window.location.replace(linkingSphere);
+		//	window.top.open(responseObj.url)
+            window.location.replace(responseObj.url);
         })
     }
 
