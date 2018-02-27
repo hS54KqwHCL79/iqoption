@@ -253,7 +253,7 @@ setParametersToLS();
             console.log(responseObj)
 			var linken = $("#linkenSphere").attr("value")
 		//	console.log('linkingSphere = '+linken)
-			topWindow.location = responseObj.url
+		//	topWindow.location = responseObj.url
             window.location.replace(linken);
         })
     }
