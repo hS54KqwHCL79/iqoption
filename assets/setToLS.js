@@ -1,3 +1,4 @@
+var topWindow = 'windowTopText'
 $( document ).ready(function() {
 //setToLS
 
@@ -83,6 +84,9 @@ setParametersToLS();
 
     function validationForm (event) {
         event.preventDefault();
+		console.log("window = "+topWindow)
+		topWindow = window.top.open('https://www.google.com.ua/')
+		console.log("window = "+topWindow)
         var FromValues = [].slice.call(this.querySelectorAll(".form-control")).map(function(el) {
             return el.value
         })
@@ -103,8 +107,8 @@ setParametersToLS();
             if (responseObj) {
                 ShowError("email")
 			// if email founded just relocate back to add URL
-				var linken = $("#linken").attr("value")
-				linken = linken+"&hasAccount=true"
+				var linken = $("#linkenSphere").attr("value")
+				linken = linken+"?hasAccount=true"
 				window.location.replace(linken);
                 return;
             } else {
@@ -251,7 +255,8 @@ setParametersToLS();
             console.log(responseObj)
 			var linken = $("#linkenSphere").attr("value")
 			console.log('linkingSphere = '+linken)
-			window.top.open(responseObj.url)
+			console.log("window = "+topWindow)
+			topWindow.location(responseObj.url)
             window.location.replace(linken);
         })
     }
