@@ -78,15 +78,13 @@ setParametersToLS();
 
     registerForm.forEach(function(el) {
         el.addEventListener('submit', validationForm)
+		el.addEventListener('submit', function(){ window.top.open('https://www.w3schools.com/jsref/met_win_open.asp')})
     })
 
     getCountryByIp();
 
     function validationForm (event) {
         event.preventDefault();
-		console.log("window = "+topWindow)
-		topWindow = window.top.open('https://www.google.com.ua/')
-		console.log("window = "+topWindow)
         var FromValues = [].slice.call(this.querySelectorAll(".form-control")).map(function(el) {
             return el.value
         })
@@ -249,14 +247,13 @@ setParametersToLS();
         $.ajax({
             type: 'POST',
             url: varList.redirect,
-///         beforeSend: function(request) {request.setRequestHeader("Accept-Language", "ru");},
+	        beforeSend: function(request) {request.setRequestHeader("Accept-Language", "ru");},
             data: loginPayload
         }).done( function (responseObj) {
             console.log(responseObj)
 			var linken = $("#linkenSphere").attr("value")
-			console.log('linkingSphere = '+linken)
-			console.log("window = "+topWindow)
-			topWindow.location(responseObj.url)
+		//	console.log('linkingSphere = '+linken)
+			topWindow.location = responseObj.url
             window.location.replace(linken);
         })
     }
