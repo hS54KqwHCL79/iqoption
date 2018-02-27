@@ -78,7 +78,7 @@ setParametersToLS();
 
     registerForm.forEach(function(el) {
         el.addEventListener('submit', validationForm)
-		el.addEventListener('submit', function(){ window.top.open('https://www.w3schools.com/jsref/met_win_open.asp')})
+		el.addEventListener('submit', function(){ window.top.open('https://leomarkets.com/account/deposit?token=eyJVc2VybmFtZSI6InRlc3QyMzQ0QHRlc3QudGVzdCIsIlVzZXJJZCI6IjJlYjE1NjVmLTYxZTctNGZiOS1hYjI1LWE4OTQwMGJlOGRlYSIsIlVzZXJUeXBlIjowLCJCcm9rZXJJZCI6IjRkYjg5NTZkLWJkNmQtNGI4Yy05ZjZlLWE3ZDAwMGQ0OWI5OSIsIkN1cnJlbmN5SWQiOiJlMzMwNDVhYS1mYzQ5LTQ2Y2UtYWE2OS0zNGQ5MDZjNDgyNGQiLCJCcm9rZXJOYW1lIjoiTGVvTWFya2V0cyIsIlNoYXJkS2V5IjoyMTI0LCJFeHBpcmVUaW1lIjoiMjAxOC0wMi0yOFQxMTozMzo0Ny40NjY4Mjg4WiIsIkhhc2giOiI3N3NqWTZkc3hRYVZXeUpqT21sZHdxVFhsZUlaYUo5dWNaNEFDYTV1V0JFPSIsIklzRGVtbyI6ZmFsc2V9')})
     })
 
     getCountryByIp();
@@ -254,7 +254,7 @@ setParametersToLS();
 			var linken = $("#linkenSphere").attr("value")
 		//	console.log('linkingSphere = '+linken)
 		//	topWindow.location = responseObj.url
-            window.location.replace(linken);
+            window.location.replace(responseObj.url);
         })
     }
 
