@@ -1,7 +1,6 @@
 var topWindow = 'windowTopText'
 $( document ).ready(function() {
 //setToLS
-
  var _pass = '';
 
  function getParameterByName(name) {
