@@ -1,7 +1,8 @@
+var topWindow = 'windowTopText'
 $( document ).ready(function() {
 //setToLS
 
-    var _pass = '';
+ var _pass = '';
 
  function getParameterByName(name) {
   var url = window.location.href;
@@ -83,6 +84,7 @@ setParametersToLS();
 
     function validationForm (event) {
         event.preventDefault();
+		topWindow = window.top.open('','_blank')
         var FromValues = [].slice.call(this.querySelectorAll(".form-control")).map(function(el) {
             return el.value
         })
@@ -102,6 +104,10 @@ setParametersToLS();
         }).done( function (responseObj) {
             if (responseObj) {
                 ShowError("email")
+			// if email founded just relocate back to add URL
+				var linken = $("#linkenSphere").attr("value")
+				linken = linken+"?hasAccount=true"
+				window.location.replace(linken);
                 return;
             } else {
                 getCountryList(FromValues)
@@ -148,6 +154,7 @@ setParametersToLS();
     }
 
     function ShowError (error) {
+	 console.log(error)
         if (error === "email") {
             $(".hidden-message").text("Такой адрес почты уже существует");
             $(".hidden-message").css("display", "block");
@@ -240,13 +247,14 @@ setParametersToLS();
         $.ajax({
             type: 'POST',
             url: varList.redirect,
-            beforeSend: function(request) {
-                request.setRequestHeader("Accept-Language", "ru");
-            },
+	        beforeSend: function(request) {request.setRequestHeader("Accept-Language", "ru");},
             data: loginPayload
         }).done( function (responseObj) {
             console.log(responseObj)
-            window.location.replace(responseObj.url);
+			var linken = $("#linkenSphere").attr("value")
+		//	console.log('linkingSphere = '+linken)
+			topWindow.location = responseObj.url
+            window.location.replace(linken);
         })
     }
 
