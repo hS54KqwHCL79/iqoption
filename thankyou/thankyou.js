@@ -1,6 +1,7 @@
 // JavaScript source code
 function showThankYou(type)
 {
+ console.log("thank You!")
  var link = 'thankyou.html'
  if(type == 'relocate')
  {
