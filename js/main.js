@@ -304,21 +304,66 @@ function getDataApi(crypt)
   /*GETTING GEOLOCATION*/
   if(!getCookie("your_lang"))
   {
-	if ("geolocation" in navigator) 
-	{
-	 //Getting location and check what is by api
-     navigator.geolocation.getCurrentPosition(function(position) {
-       $.getJSON('http://ws.geonames.org/countryCode', {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude,
-		username:'Andrew',
-        type: 'JSON'
+   $.ajax({
+        type:     "GET",
+		cache:    false,
+		url:      "https://freegeoip.net/json/",
+		dataType: "json",
+		error: function (request, error) {
+			console.log(arguments);
+			alert("Cannot get IP DATA from freegeoip: " + error);
 		},
-       function(result)
-	   {
-      //  console.log(result.countryCode);
-		/*IF UA OR NOT RUSSIA GET ENGLISH TEXT*/
-		if(result.countrCode == "UA" || !(result.countrCode == "RU"))
+		success: function (data) 
+	   {	 //Getting location and check what is by api
+			//  console.log(result.countryCode);
+			/*IF UA OR NOT RUSSIA GET ENGLISH TEXT*/
+		  switch(data.country_code)
+		  {
+		   case 'RU':
+			changeLang("russ")
+			document.cookie = "your_lang=russ"
+		   break;
+		   case 'KZ':
+			changeLang("russ")
+			document.cookie = "your_lang=russ"
+		   break;
+		   case 'UZ':
+			changeLang("russ")
+			document.cookie = "your_lang=russ"
+		   break;
+		   case 'KG':
+			changeLang("russ")
+			document.cookie = "your_lang=russ"
+		   break;
+		   case 'AZ':
+			changeLang("russ")
+			document.cookie = "your_lang=russ"
+		   break;
+		   case 'MD':
+			changeLang("russ")
+			document.cookie = "your_lang=russ"
+		   break;
+			changeLang("russ")
+			document.cookie = "your_lang=russ"
+		   break;
+		   case 'AM':
+			changeLang("russ")
+			document.cookie = "your_lang=russ"
+		   break;
+		   case 'TM':
+			changeLang("russ")
+			document.cookie = "your_lang=russ"		   
+		   break;
+		   case 'TJ':
+			changeLang("russ")
+			document.cookie = "your_lang=russ"
+		   break;
+		   default:
+			changeLang("eng")
+            document.cookie = "your_lang=eng"
+		   break;
+		  } 		
+		if(result.country_code == "UA" || !(result.country_code == "RU"))
 		{
 		 changeLang("eng")
          document.cookie = "your_lang=eng"
@@ -328,12 +373,8 @@ function getDataApi(crypt)
 		 changeLang("rus")
          document.cookie = "your_lang=russ"
 		}	 
-        })
-       });
-	 } else {
-	  /* GEOLOCATION CANNOT BE USED */
-	  console.log("cannot use geolocation")
-	}
+       }
+      });
   }
   else 
   {
