@@ -375,7 +375,7 @@ function getDataApi(crypt)
             document.cookie = "your_lang=eng"
 		   break;
 		  } 		
-		if(result.country_code == "UA" || !(result.country_code == "RU"))
+		if(data.country_code == "UA" || !(data.country_code == "RU"))
 		{
 		 changeLang("eng")
          document.cookie = "your_lang=eng"
