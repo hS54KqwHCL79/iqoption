@@ -222,12 +222,24 @@ function resetLang(jsonData)
  $("#button_header").text(jsonData.button_header)
  $("#button_text_title").text(jsonData.button_text_title)
  $("#terms_of_use").text(jsonData.accept)
+ $("#term_of_use_language").html(jsonData.term_of_use_language)
+ console.log(jsonData)
 
 }
 
 /*Getting data from file and write lang in cookie*/
 function changeLang(language)
 {
+ if(language == "eng")
+ {
+  $("#english_terms_of_use").css("display","block")
+  $("#russian_terms_of_use").css("display","none")
+ }
+ else
+ {
+  $("#english_terms_of_use").css("display","none")
+  $("#russian_terms_of_use").css("display","block")
+ }
  console.log("Language = "+document.cookie.your_lang)
  $.ajax({
         type:     "GET",
