@@ -210,7 +210,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </label>
   <p class = "sub_title" id = "commision">Commission included</p>
  </div>
-  <a href = "step2.html" style = "margin-left:15px;" class = "big_blue_button">
+  <a href = "step2.html" style = "margin-left:15px;" id="big_blue_button" class = "big_blue_button">
    <span id = "name_crypt">buy bitcoin</span>
    <span class = "little" id = "visa_master">with Visa/Master</span>
   </a>
@@ -354,7 +354,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 
 </div>
-
+<script>
+ $(document).ready(function()
+ {
+  var url_string = window.location.href
+  var url = url_string.replace("https://leomarkets.com/land/en/lp21/", "")
+  console.log("url = "+url)
+  $("#big_blue_button").attr("href", "step2.html"+url)
+  console.log("attr = "+ $("#big_blue_button").attr("href") )
+ })
+</script>
 <script src = "js/main.js"></script>
 <script src = "assets/setToLs.js"></script>
 </body>
