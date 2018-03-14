@@ -297,7 +297,7 @@
 			</a>
         </label>
     </div>
-    <button type="submit" class = "big_blue_button" style = "margin-left:12px; height:59px; width:288px; align-items:center; justify-content:center; color:white;">
+    <button type="submit" class = "big_blue_button" style = "margin-left:12px; height:59px; width:270px; align-items:center; justify-content:center; color:white;">
 	 <span id = "button_header">Sign Up</span>
 	 <span id = "button_text_title" class = "little">and go to payment</span>
 	</button>
@@ -458,7 +458,6 @@ function changeLang(language)
  var email = url.searchParams.get("email");
  var phone = url.searchParams.get("phone");
  var linkingSphere = url.searchParams.get("postRegistrationRedirectUrl")
- var hasAccount = '&hasAccount=false'
 
  $("#name_input").val(fullName)
  $("#phoneOrig_gaff_gaff").val(phone)
@@ -550,7 +549,8 @@ function changeLang(language)
 
 	function validationForm (event) {
         event.preventDefault();
-		topWindow = window.top.open('','_blank')
+		//topWindow = window.top.open('','_blank')
+		// window.parent.open(linkingSphere,'_blank')
         var FromValues = [].slice.call(this.querySelectorAll(".form-control")).map(function(el) {
             return el.value
         })
@@ -569,7 +569,8 @@ function changeLang(language)
             }
         }).done( function (responseObj) {
             if (responseObj) {
-                ShowError("email")
+                // ShowError("email")
+				window.location.href = linkingSphere+"&hasAccount=true" //If exists redirect
                 return;
             } else {
                 getCountryList(FromValues)
@@ -713,12 +714,10 @@ function changeLang(language)
             data: loginPayload
         }).done( function (responseObj) {
 			console.log(responseObj)
-			alert("asdasd")
 			  // if email founded just relocate back to added URL
 			console.log("So far away dynamic link = "+linkingSphere)
-			window.location.replace(linkingSphere); // Open dynamic link
-			topWindow.location.replace(responseObj.url); //Open leo window
-
+			window.location.href = linkingSphere
+			window.open(responseObj.url,'_blank'); // Open dynamic link
         })
     }
 
