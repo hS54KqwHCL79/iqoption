@@ -233,11 +233,19 @@ function changeLang(language)
  if(language == "eng")
  {
   $("#english_terms_of_use").css("display","block")
+  $("#germany_terms_of_use").css("display","none")
   $("#russian_terms_of_use").css("display","none")
  }
- else
+ else if(language == "ger")
  {
   $("#english_terms_of_use").css("display","none")
+  $("#germany_terms_of_use").css("display","block")
+  $("#russian_terms_of_use").css("display","none")
+ }
+ else 
+ {
+  $("#english_terms_of_use").css("display","none")
+  $("#germany_terms_of_use").css("display","none")
   $("#russian_terms_of_use").css("display","block")
  }
  console.log("Language = "+document.cookie.your_lang)
@@ -370,6 +378,10 @@ function getDataApi(crypt)
 			changeLang("russ")
 			document.cookie = "your_lang=russ"
 		   break;
+		   case 'DE':
+			changeLang("ger")
+			document.cookie = "your_lang=ger"
+			break;
 		   default:
 			changeLang("eng")
             document.cookie = "your_lang=eng"
